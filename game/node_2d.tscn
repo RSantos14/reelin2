@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqjeke6lcha6j"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_0kgwv"]
+[ext_resource type="Script" path="res://player.gd" id="1_td1wb"]
 [ext_resource type="Texture2D" uid="uid://bjrvfdryougkl" path="res://art/boaanimt.png" id="2_7bydk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_br2dp"]
@@ -72,11 +72,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-rotation = 5.77704
-script = ExtResource("1_0kgwv")
+script = ExtResource("1_td1wb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
