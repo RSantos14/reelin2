@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqjeke6lcha6j"]
+
+[ext_resource type="Script" uid="uid://dk4ilwx6iacih" path="res://character_body_2d.gd" id="1_0kgwv"]
+[ext_resource type="Texture2D" uid="uid://bjrvfdryougkl" path="res://art/boaanimt.png" id="2_7bydk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br2dp"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40nja"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p1vl"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75qxg"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eug77"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itoxb"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj3n4"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqg02"]
+atlas = ExtResource("2_7bydk")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bld7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br2dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40nja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p1vl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75qxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eug77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itoxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj3n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqg02")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0kgwv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(295, 226)
+scale = Vector2(4.62, 4.74)
+sprite_frames = SubResource("SpriteFrames_3bld7")
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
